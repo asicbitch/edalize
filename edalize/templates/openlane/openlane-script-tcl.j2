@@ -63,6 +63,7 @@ set ::env(MACRO_PLACEMENT_CFG) {{macro_placement}}
 source {{tcl_params}}
 {% endif %}
 
+{% if tcl != "" %}
 set tcl [list {{tcl}}]
 set filename $::env(PDK)_$::env(STD_CELL_LIBRARY)_config.tcl
 
@@ -74,3 +75,4 @@ foreach x $tcl {
         break
     }
 }
+{% endif %}
